@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "a2c53de4-7e04-429c-9ac2-60c74f2e465c",
+		"name": "mpharma-takehome",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetDiganosisCodes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/diagnosis?page=1&limit=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"diagnosis"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				},
+				"description": "This endpoint is paginated passing limit and page as querystrings"
+			},
+			"response": []
+		},
+		{
+			"name": "GetSingleDiagnosisCode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/diagnosis/55",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"diagnosis",
+						"55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDiagnosisCode",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/diagnosis/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"diagnosis",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateDiagnosisCOde",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1204f1b6-a329-4a4f-8b07-03e87e51524d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"category_code\": \"Sample001\",\n    \"diagnosis_code\": \"0\",\n    \"full_code\": \"Sample0010\",\n    \"abbreviated_desc\": \"Sample abbreviation\",\n    \"full_desc\": \"Sample full description\",\n    \"category_title\": \"Sample category title\",\n    \"icd_version\": \"icd-10\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/diagnosis/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"diagnosis",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateDiagnosisCode",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"category_code\": \"Sample002\",\n    \"diagnosis_code\": \"2\",\n    \"full_code\": \"Sample0020\",\n    \"abbreviated_desc\": \"Sample abbreviation\",\n    \"full_desc\": \"Sample full description\",\n    \"category_title\": \"Sample category title\",\n    \"icd_version\": \"icd-10\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/diagnosis/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"diagnosis",
+						"20"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

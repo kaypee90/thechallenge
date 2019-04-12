@@ -1,0 +1,28 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: django
+    env_file: .env
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py test && gunicorn take_home.wsgi -b 0.0.0.0:8000"
+    depends_on:
+      - db
+    volumes:
+      - ./src/take_home:/src/take_home    
+    ports:
+      - "8000:8000"
+    
+  db:
+    image: postgres:latest
+    container_name: postres
+    restart: always
+    ports:
+      - "5432"
+    environment:
+      POSTGRES_PASSWORD: REALLYGOOD
+  
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
