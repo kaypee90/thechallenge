@@ -20,6 +20,7 @@ services:
       - "5432"
     environment:
       POSTGRES_PASSWORD: REALLYGOOD
+      POSTGRES_DB: take_home_drf
   
   adminer:
     image: adminer
